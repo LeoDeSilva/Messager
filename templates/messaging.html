@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Messaging</title>
+	<link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="{% static 'messaging.css' %}" />
+</head>
+
+<body>
+	<div class="overlay">
+
+		<heading class="heading">
+			<div class="left">
+				<i class="bx bxs-comment-detail primary bx-flip-horizontal comment"></i>
+				<div>
+					<span class="title">Notifications</span>
+					<span id="room_id" class="number">1782</span>
+				</div>
+			</div>
+
+			<div class="right">
+				<span class="name">Leo De Silva</span>
+				<i class="bx bxs-user-circle primary user"></i>
+			</div>
+		</heading>
+
+		<div class="split">
+			<div class="sidebar">
+				<div class="center">
+					<div class="room-list">
+						<div class="room "><span>Notifications</span></div>
+						<div class="room"><span>Backend Developers</span></div>
+						<div class="room active"><span>Computer Science Mrs Gudgin</span></div>
+						<div class="room"><span>Spanish</span></div>
+						<div class="room"><span>Form 3.5</span></div>
+					</div>
+
+					<div class="room-btn">
+						<span>+</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="messages"></div>
+
+
+		</div>
+		<div class="message-form">
+			<input class="message-input" placeholder="Type something..."></input>
+			<div class="send-message">+</div>
+		</div>
+
+
+
+	</div>
+
+
+</body>
+
+</html>

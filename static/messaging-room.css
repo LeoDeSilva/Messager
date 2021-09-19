@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary: #4D73F8;
+    --grey: #969696;
+}
+
+body, html{
+    font-family: "Nunito", sans-serif;
+    height: 100%;
+    margin:0;
+    padding: 0;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); cursor: pointer; }
+
+.center{
+    display:flex;
+    flex-direction: column;
+    height:100%;
+    justify-content:center;
+    align-items: center;
+}
+
+.buttons{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: start;
+
+}
+
+.room-input{
+    width: 500px;
+    border: none;
+    border-bottom: 1px solid  var(--grey);
+    font-family: "Nunito", sans-serif;
+    font-size: 25px;
+    font-weight:bold;
+    outline: none;
+}
+
+.buttons div{
+    display:flex;
+    border-radius:15px;
+    font-family: "Nunito", sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+    width: 120px;
+    height: 45px;
+    margin-right: 25px;
+    margin-top: 25px;
+}
+
+.submit{
+    background-color: var(--primary);
+    color: white;
+}
+
+.cancel{
+    box-sizing: border-box;
+    border: 5px solid var(--primary);
+    color: blue;
+}
