@@ -9,11 +9,11 @@ from django.http import HttpResponse, JsonResponse
 #    return render(request, "home.html")
 
 def home(request):
-    return render(request, "messaging.html")
+    return render(request, "index.html")
 
 
 def test(request):
-    return render(request, "index.html")
+    return render(request, "messaging.html")
 
 
 def room(request, room):

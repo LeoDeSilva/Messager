@@ -12,10 +12,14 @@ body, html{
     padding: 0;
 }
 
+input, label{
+    display: block;
+}
+
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); cursor: pointer; }
 
-.center{
+.container{
     display:flex;
     flex-direction: column;
     height:100%;
@@ -23,12 +27,14 @@ body, html{
     align-items: center;
 }
 
-.buttons{
-    width: 100%;
-    display:flex;
-    flex-direction: row;
-    justify-content: start;
+label{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
 
+input{
+    margin-bottom: 20px;
 }
 
 .room-input{
@@ -36,32 +42,27 @@ body, html{
     border: none;
     border-bottom: 1px solid  var(--grey);
     font-family: "Nunito", sans-serif;
-    font-size: 25px;
-    font-weight:bold;
+    font-size: 20px;
     outline: none;
 }
 
-.buttons div{
+.blue-btn{
     display:flex;
     border-radius:15px;
     font-family: "Nunito", sans-serif;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 15px;
     width: 120px;
     height: 45px;
     margin-right: 25px;
-    margin-top: 25px;
+    margin-top: 30px;
+    outline: none;
+    border: none;
 }
 
 .submit{
     background-color: var(--primary);
     color: white;
-}
-
-.cancel{
-    box-sizing: border-box;
-    border: 5px solid var(--primary);
-    color: blue;
 }

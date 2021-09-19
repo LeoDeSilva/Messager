@@ -1,11 +1,10 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
 	<title>Messaging</title>
 	<link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="{% static 'messaging.css' %}" />
+	<link rel="stylesheet" href="basic-messaging.css" />
 </head>
 
 <body>
@@ -28,15 +27,26 @@
 
 		<div class="split">
 			<div class="sidebar"></div>
+			<div class="messages">
 
-			<div class="messages"></div>
+				<!--<div class="message-container">
+					</div>
+					<div class="message-body">
+						This is the message body and it contains the text for the chat application, which is written in django and
+						javascript it is keeping going
+					</div>
+			</div>-->
 
+			</div>
 		</div>
 
-		<div class="message-form">
-			<input class="message-input" placeholder="Type something..."></input>
-			<div class="send-message">+</div>
-		</div>
+
+
+	</div>
+	<div class="message-form">
+		<input class="message-input" placeholder="Type something..."></input>
+		<div class="send-message">+</div>
+	</div>
 
 
 
