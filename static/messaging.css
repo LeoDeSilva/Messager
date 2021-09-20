@@ -58,6 +58,10 @@ input{
     font-weight: bold;
 }
 
+.title:hover{
+    cursor: pointer;
+}
+
 .comment{
     font-size: 30px;
 }
@@ -74,6 +78,10 @@ input{
 .name{
     padding-right: .5vw;
     font-size: 15px;
+}
+
+.name:hover{
+    cursor: pointer;
 }
 
 .sidebar{
@@ -110,8 +118,13 @@ input{
     justify-content: center;
     background-color: var(--primary);
     color: white;
+    font-family: var(--primary-font);
     font-size: 25px;
     font-weight: bold;
+}
+
+.send-message:hover{
+    cursor: pointer;
 }
 
 .messages{

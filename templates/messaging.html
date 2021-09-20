@@ -6,17 +6,44 @@
 	<title>Messaging</title>
 	<link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="{% static 'messaging.css' %}" />
+    <script
+			src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous"
+		></script>
 </head>
 
 <body>
+
+	<script>
+	$(document).ready(function () {
+		  setInterval(function () {
+			    $.ajax({
+				      type: "GET",
+				      url: "/getMessages/{{room}}/",
+				      success: function (response) {
+						$("#display").empty();
+						for (var key in response.messages) {
+							var temp = "<div class='message-container'> <div class='message-header'> <i class='bx bxs-user-circle message-profile'></i> <div class='message-name'>" + response.messages[key].user + "</div> </div> <div class='message-body'>"+ response.messages[key].value +"</div> </div>";
+							  $("#display").append(temp);
+							}
+					      },
+				      error: function (response) {
+						alert("An error occured");
+					      },
+				    });
+			  }, 100);
+		});
+      </script>
+
 	<div class="overlay">
 
 		<heading class="heading">
 			<div class="left">
 				<i class="bx bxs-comment-detail primary bx-flip-horizontal comment"></i>
 				<div>
-					<span class="title">Notifications</span>
-					<span id="room_id" class="number">1782</span>
+					<span onclick="home()" class="title">{{room}}</span>
+					<span class="number">1782</span>
 				</div>
 			</div>
 
@@ -29,20 +56,35 @@
 		<div class="split">
 			<div class="sidebar"></div>
 
-			<div class="messages"></div>
+			<div id="display" class="messages"></div>
 
 		</div>
 
-		<div class="message-form">
-			<input class="message-input" placeholder="Type something..."></input>
-			<div class="send-message">+</div>
-		</div>
+		<form class="message-form" id="post-form">
+			{% csrf_token %}
 
-
+			<input
+				type="hidden"
+				name="username"
+				id="username"
+				value="{{username}}"
+			/>
+			
+			<input
+					type="hidden"
+					name="room_id"
+					id="room_id"
+		 value="{{room_details.id}}"
+			/>
+			
+			<input id="message" class="message-input" placeholder="Type something..."></input>
+			<input type="submit" class="send-message" value="+" />
+		</form>
 
 	</div>
 
-
 </body>
+
+<script type="text/javascript" src="{% static 'room.js' %}"></script>
 
 </html>
